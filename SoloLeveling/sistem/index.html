@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Solo Leveling</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT -->
+    <div class="left">
+
+        <h1>⚔ SISTEMA SOLO LEVELING</h1>
+
+        <div class="card">
+            <h2>NÍVEL</h2>
+            <p id="nivel">1</p>
+
+            <h3>XP TOTAL</h3>
+            <p id="xp">0</p>
+
+            <progress id="barraXP" max="500" value="0"></progress>
+        </div>
+
+        <div class="card">
+            <h2>RELATÓRIO DO DIA</h2>
+
+            <label><input type="checkbox" id="treino"> Treino</label>
+            <label><input type="checkbox" id="meditacao"> Meditação</label>
+            <label><input type="checkbox" id="projeto"> Projeto</label>
+
+            <input type="number" id="horas" placeholder="Horas programação">
+
+            <button onclick="executarMissao()">EXECUTAR MISSÃO</button>
+        </div>
+
+        <div class="card">
+            <h2>RESULTADO</h2>
+            <p id="resultadoXP">+0 XP</p>
+        </div>
+
+    </div>
+
+    <!-- CENTER -->
+    <div class="center">
+        <h2>ATRIBUTOS</h2>
+        <canvas id="radarChart"></canvas>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+        <h2>HISTÓRICO</h2>
+        <canvas id="lineChart"></canvas>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
