@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sistema Solo Leveling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
+
+  <div id="authOverlay" class="auth-overlay">
+    <div class="card glass auth-card">
+      <div class="titleRow">
+        <div class="logoX" id="authClose" style="cursor: pointer;">✕</div>
+        <div>
+          <h1 id="authTitle">ACESSO AO SISTEMA</h1>
+          <p class="muted" id="authSubtitle">Identifique-se, Caçador.</p>
+        </div>
+      </div>
+
+      <div class="auth-forms">
+        <form id="loginForm" class="auth-form">
+          <div class="input-group">
+            <label class="k">USUÁRIO</label>
+            <input type="text" placeholder="Seu nome de caçador..." required>
+          </div>
+          <div class="input-group">
+            <label class="k">SENHA</label>
+            <input type="password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn primary">INICIAR SESSÃO</button>
+          <p class="small muted center">Não tem registro? <a href="#" id="toRegister">Criar Conta</a></p>
+        </form>
+
+        <form id="registerForm" class="auth-form hidden">
+          <div class="input-group">
+            <label class="k">NOME COMPLETO</label>
+            <input type="text" placeholder="Sung Jin-Woo" required>
+          </div>
+          <div class="input-group">
+            <label class="k">E-MAIL</label>
+            <input type="email" placeholder="hunter@sistema.com" required>
+          </div>
+          <div class="input-group">
+            <label class="k">NOVA SENHA</label>
+            <input type="password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn primary">DESPERTAR AGORA</button>
+          <p class="small muted center">Já é um caçador? <a href="#" id="toLogin">Fazer Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="grid">
+      <aside class="col left">
+        <div class="card glass">
+          <div class="titleRow">
+            <div class="logoX">✕</div>
+            <div>
+              <h1>SISTEMA SOLO LEVELING</h1>
+              <p class="muted">Evolua todos os dias. Supere seus limites.</p>
+            </div>
+          </div>
+          <div class="levelXp">
+            <div class="levelBox">
+              <div class="k">NÍVEL</div>
+              <div id="level" class="levelNum">12</div>
+            </div>
+            <div class="xpBox">
+              <div class="k">XP TOTAL</div>
+              <div class="xpTop"><div id="xpText" class="xpText">2.450 / 3.000</div></div>
+              <div class="bar"><div id="xpFill" class="fill"></div></div>
+              <div id="nextText" class="muted small">Próximo nível: 550 XP</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <h2>RELATÓRIO DO DIA</h2>
+          <div class="tasks">
+            <label class="task">
+              <span class="taskLeft"><span class="ico">💪</span><span>Treino realizado</span></span>
+              <input id="tTreino" type="checkbox"><span class="cb"></span>
+            </label>
+            <label class="task">
+              <span class="taskLeft"><span class="ico">🧘</span><span>Meditação realizada</span></span>
+              <input id="tMeditacao" type="checkbox"><span class="cb"></span>
+            </label>
+            <div class="task row">
+              <span class="taskLeft"><span class="ico">⌨️</span><span>Horas de programação</span></span>
+              <div class="hours"><input id="tHoras" type="number" min="0" max="24" value="3" /><span class="muted">h</span></div>
+            </div>
+            <label class="task">
+              <span class="taskLeft"><span class="ico">📁</span><span>Trabalhou no projeto</span></span>
+              <input id="tProjeto" type="checkbox"><span class="cb"></span>
+            </label>
+          </div>
+          <button id="btnMissao" class="btn primary">EXECUTAR MISSÃO</button>
+          <button id="btnReset" class="btn danger">REINICIAR PROGRESSO</button>
+        </div>
+        <div class="card glass resultCard">
+          <div class="resultHeader"><h2>RESULTADO DO DIA</h2><div id="xpGainBadge" class="badge">+0 XP</div></div>
+          <div class="resultStats">
+            <div><div class="k">XP ACUMULADO</div><div id="xpAccum" class="bigStat">2.450</div></div>
+            <div><div class="k">NÍVEL ATUAL</div><div id="level2" class="bigStat">12</div></div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="col midRight">
+        <div class="card glass bigCard">
+          <div class="bigTop"><div class="bigTitle"><h2>ATRIBUTOS</h2><p class="muted">Seu desenvolvimento como caçador</p></div></div>
+          <div class="bigBody">
+            <div class="radarWrap">
+              <div class="attrLabel top"><div class="labelName">💪 FORÇA</div><div id="vForca" class="labelVal">78%</div></div>
+              <div class="attrLabel right"><div class="labelName">🫀 VITALIDADE</div><div id="vVitalidade" class="labelVal">82%</div></div>
+              <div class="attrLabel bottomRight"><div class="labelName">🧠 INTELECTO</div><div id="vIntelecto" class="labelVal">71%</div></div>
+              <div class="attrLabel bottom"><div class="labelName">🧘 MENTAL</div><div id="vMental" class="labelVal">68%</div></div>
+              <div class="attrLabel bottomLeft"><div class="labelName">🎯 DISCIPLINA</div><div id="vDisciplina" class="labelVal">90%</div></div>
+              <div class="attrLabel left"><div class="labelName">🏃 DESTREZA</div><div id="vDestreza" class="labelVal">65%</div></div>
+              <canvas id="radar" width="520" height="520"></canvas>
+            </div>
+            <div class="art">
+              <div class="artGlow"></div>
+              <img class="artImg" src="./assets/cacador.jpg" alt="Caçador" />
+              <div class="artVignette"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card glass historyCard">
+          <div class="historyTop">
+            <h2>HISTÓRICO DE ATRIBUTOS</h2>
+            <div class="legend">
+              <span class="lg"><i style="background:#b26bff"></i>Força</span>
+              <span class="lg"><i style="background:#ff4b6e"></i>Vitalidade</span>
+              <span class="lg"><i style="background:#3da2ff"></i>Intelecto</span>
+              <span class="lg"><i style="background:#48ffd5"></i>Mental</span>
+              <span class="lg"><i style="background:#ffd34a"></i>Disciplina</span>
+              <span class="lg"><i style="background:#64ff7a"></i>Destreza</span>
+            </div>
+          </div>
+          <canvas id="history" width="1080" height="260"></canvas>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
